@@ -215,150 +215,8 @@ body::before {
 <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.min.js"></script>
-<script>
-const DATA=[{"c":"03/25","f":"2898/24-25","d":"2025-01-02","p":"AARTI DRUGS","m":"METRONIDAZOLE","t":"Principio activo","k":"Digestivo","mo":"USD","v":2900.0,"q":1,"pl":90,"y":2025,"mes":1},{"c":"05/25","f":"CS-25/00158","d":"2025-01-03","p":"CHEMO","m":"CIPROFIBRATO","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":202500.0,"q":2,"pl":180,"y":2025,"mes":1},{"c":"02/25","f":"90673223","d":"2025-01-09","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":1152.0,"q":1,"pl":60,"y":2025,"mes":1},{"c":"01/25","f":"LZ414-12/2164","d":"2025-01-13","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":60863.16,"q":1,"pl":90,"y":2025,"mes":1},{"c":"04/25","f":"24-25/E-0141","d":"2025-01-14","p":"SMRUTHI ORGANICS","m":"AMLODIPINA","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":3500.0,"q":1,"pl":90,"y":2025,"mes":1},{"c":"07/25","f":"43616137","d":"2025-02-13","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":1916.0,"q":1,"pl":60,"y":2025,"mes":2},{"c":"11/25","f":"241102345","d":"2025-02-15","p":"WELDING","m":"DIPIRONA SODICA","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":123900.0,"q":3,"pl":180,"y":2025,"mes":2},{"c":"08/25","f":"LZ415-12/2183","d":"2025-02-20","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":236520.91,"q":2,"pl":120,"y":2025,"mes":2},{"c":"06/25","f":"90683503","d":"2025-02-20","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":628.5,"q":1,"pl":60,"y":2025,"mes":2},{"c":"08/25","f":"LZ415-12/2184","d":"2025-02-20","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":36930.82,"q":1,"pl":null,"y":2025,"mes":2},{"c":"10/25","f":"25390980230185","d":"2025-02-24","p":"MEGAFINE PHARMA","m":"ETORICOXIB","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":6375.0,"q":1,"pl":90,"y":2025,"mes":2},{"c":"09/25","f":"LZ416-12/2194","d":"2025-03-14","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":174294.6,"q":2,"pl":120,"y":2025,"mes":3},{"c":"12/25","f":"90688648","d":"2025-03-17","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":163.0,"q":1,"pl":60,"y":2025,"mes":3},{"c":"13/25","f":"LZ417-12/2205","d":"2025-04-07","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":88223.89,"q":1,"pl":90,"y":2025,"mes":4},{"c":"14/25","f":"44032550","d":"2025-04-10","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":4025.0,"q":1,"pl":60,"y":2025,"mes":4},{"c":"15/25","f":"LZ419-12/2208","d":"2025-04-14","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":126980.36,"q":2,"pl":120,"y":2025,"mes":4},{"c":"15/25","f":"LZ419-12/2209","d":"2025-04-14","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":29124.9,"q":1,"pl":null,"y":2025,"mes":4},{"c":"16/25","f":"E009","d":"2025-04-29","p":"LAKE CHEMICALS","m":"LORAZEPAM","t":"Principio activo","k":"Sistema nervioso","mo":"USD","v":3000.0,"q":1,"pl":60,"y":2025,"mes":4},{"c":"17/25","f":"90697684","d":"2025-04-30","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":81.5,"q":1,"pl":60,"y":2025,"mes":4},{"c":"19/25","f":"LZ420-12/2223","d":"2025-05-22","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":124255.8,"q":1,"pl":90,"y":2025,"mes":5},{"c":"19/25","f":"LZ420-12/2224","d":"2025-05-22","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":5745.6,"q":1,"pl":null,"y":2025,"mes":5},{"c":"20/25","f":"44235813","d":"2025-05-22","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":1468.0,"q":1,"pl":60,"y":2025,"mes":5},{"c":"18/25","f":"LZ418-12/2219","d":"2025-05-23","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":252209.45,"q":2,"pl":120,"y":2025,"mes":5},{"c":"18/25","f":"LZ418-12/2220","d":"2025-05-23","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":18505.61,"q":1,"pl":null,"y":2025,"mes":5},{"c":"21/25","f":"LZ421-12/2236","d":"2025-06-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":328378.62,"q":2,"pl":120,"y":2025,"mes":6},{"c":"21/25","f":"LZ421-12/2237","d":"2025-06-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":22240.43,"q":1,"pl":null,"y":2025,"mes":6},{"c":"22/25","f":"LZ422-12/2242","d":"2025-06-16","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":22275.08,"q":1,"pl":90,"y":2025,"mes":6},{"c":"24/25","f":"SI2425299","d":"2025-07-02","p":"VARTIA PHARMA","m":"CARVEDILOL","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":5750.0,"q":1,"pl":120,"y":2025,"mes":7},{"c":"25/15","f":"101","d":"2025-07-02","p":"NPS INTERNATIONAL","m":"HIDROSMINA","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":44000.0,"q":1,"pl":120,"y":2025,"mes":7},{"c":"37/25","f":"CYTD-BBLD250370","d":"2025-07-09","p":"BIOBETTA","m":"DIPIRONA MAGNESICA","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":3600.0,"q":1,"pl":90,"y":2025,"mes":7},{"c":"32/25","f":"20686","d":"2025-07-22","p":"JHON A. MASON","m":"MEBENDAZOL","t":"Principio activo","k":"Digestivo","mo":"USD","v":4430.0,"q":1,"pl":90,"y":2025,"mes":7},{"c":"26/25","f":"LZ424-12/2257","d":"2025-07-24","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":30309.38,"q":1,"pl":90,"y":2025,"mes":7},{"c":"26/25","f":"LZ424-12/2258","d":"2025-07-24","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":11972.57,"q":1,"pl":null,"y":2025,"mes":7},{"c":"33/25","f":"SI2425334","d":"2025-07-30","p":"VARTIA PHARMA","m":"DONEPEZIL","t":"Principio activo","k":"Sistema nervioso","mo":"USD","v":4500.0,"q":1,"pl":120,"y":2025,"mes":7},{"c":"27/25","f":"LZ423-12/2261","d":"2025-08-06","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":253490.18,"q":2,"pl":120,"y":2025,"mes":8},{"c":"29/25","f":"SCS-WX-NT-BBLD250247","d":"2025-08-06","p":"BIOBETTA","m":"ROPIVACAINE","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":2000.0,"q":1,"pl":120,"y":2025,"mes":8},{"c":"27/25","f":"LZ423-12/2262","d":"2025-08-07","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":42063.53,"q":1,"pl":null,"y":2025,"mes":8},{"c":"28/25","f":"LZ425-12/2266","d":"2025-08-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":77269.38,"q":1,"pl":90,"y":2025,"mes":8},{"c":"28/25","f":"LZ425-12/2267","d":"2025-08-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":7457.49,"q":1,"pl":null,"y":2025,"mes":8},{"c":"30/25","f":"90719426","d":"2025-08-14","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":326.0,"q":1,"pl":30,"y":2025,"mes":8},{"c":"31/25","f":"44683430","d":"2025-08-14","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":1787.0,"q":1,"pl":30,"y":2025,"mes":8},{"c":"34/25","f":"251100988","d":"2025-08-19","p":"WELDING","m":"DIPIRONA SODICA","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":123900.0,"q":3,"pl":180,"y":2025,"mes":8},{"c":"35/25","f":"LZ427-12/2270","d":"2025-08-26","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":56835.41,"q":1,"pl":90,"y":2025,"mes":8},{"c":"35/25","f":"LZ427-12/2271","d":"2025-08-26","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":49773.18,"q":1,"pl":null,"y":2025,"mes":8},{"c":"36/25","f":"0006 - 00000707","d":"2025-08-28","p":"TRIQUIM","m":"CITRATO DE FENTANILO","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":14001.5,"q":1,"pl":60,"y":2025,"mes":8},{"c":"38/25","f":"LZ426-12/2279","d":"2025-09-10","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":327480.35,"q":2,"pl":120,"y":2025,"mes":9},{"c":"38/25","f":"LZ426-12/2280","d":"2025-09-10","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":60891.0,"q":1,"pl":null,"y":2025,"mes":9},{"c":"39/25","f":"SD01083699","d":"2025-09-13","p":"HAISHING","m":"ACYCLOVIR","t":"Principio activo","k":"Antiinfecciosos","mo":"USD","v":9800.0,"q":1,"pl":120,"y":2025,"mes":9},{"c":"40/25","f":"CS-25/06881","d":"2025-09-20","p":"CHEMO","m":"ROSUVASTATINA","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":48750.0,"q":1,"pl":120,"y":2025,"mes":9},{"c":"41/25","f":"CI0002612790","d":"2025-09-29","p":"ARAGEN","m":"TRAMADOL","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":7125.0,"q":1,"pl":60,"y":2025,"mes":9},{"c":"43/25","f":"7281782","d":"2025-10-06","p":"IMCD SWITZERLAND","m":"CODEINE PHOSPHATE","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":78400.0,"q":1,"pl":90,"y":2025,"mes":10},{"c":"42/25","f":"LZ428-12/2294","d":"2025-10-07","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":3815.52,"q":1,"pl":null,"y":2025,"mes":10},{"c":"44/25","f":"44987384","d":"2025-10-07","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":2736.0,"q":1,"pl":null,"y":2025,"mes":10},{"c":"42/25","f":"LZ428-12/2293","d":"2025-10-07","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":166490.35,"q":2,"pl":120,"y":2025,"mes":10},{"c":"45/25","f":"LZ429-12/2302","d":"2025-10-21","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":6590.7,"q":1,"pl":null,"y":2025,"mes":10},{"c":"45/25","f":"LZ429-12/2301","d":"2025-10-21","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":56225.1,"q":1,"pl":90,"y":2025,"mes":10},{"c":"46/25","f":"135","d":"2025-11-01","p":"PHARMACHINE","m":"PUNZONES","t":"Equipos e insumos","k":"Equipos e insumos","mo":"USD","v":3260.0,"q":1,"pl":null,"y":2025,"mes":11},{"c":"47/25","f":"LZ431-12/2303","d":"2025-11-11","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":79569.76,"q":1,"pl":90,"y":2025,"mes":11},{"c":"47/25","f":"LZ431-12/2304","d":"2025-11-11","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":37200.0,"q":1,"pl":90,"y":2025,"mes":11},{"c":"50/25","f":"0302005013","d":"2025-12-23","p":"SNEHA MEDICARE","m":"METOCLOPRAMIDE","t":"Principio activo","k":"Digestivo","mo":"USD","v":7400.0,"q":1,"pl":120,"y":2025,"mes":12},{"c":"01/26","f":"LZ430-12/2329","d":"2026-01-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":270387.02,"q":2,"pl":120,"y":2026,"mes":1},{"c":"48/25","f":"PI-113/25-26","d":"2026-01-14","p":"PELLETS PHARMA","m":"OMEPRAZOLE","t":"Principio activo","k":"Digestivo","mo":"USD","v":21000.0,"q":1,"pl":120,"y":2026,"mes":1},{"c":"02/26","f":"LZ435 - 12-2333/2334","d":"2026-01-19","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":232100.71,"q":2,"pl":120,"y":2026,"mes":1},{"c":"03/26","f":"2529082","d":"2026-01-21","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":1058.0,"q":1,"pl":null,"y":2026,"mes":1},{"c":"08/26","f":"26390980230139","d":"2026-02-03","p":"MEGAFINE PHARMA","m":"ETORICOXIB","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":10000.0,"q":1,"pl":90,"y":2026,"mes":2},{"c":"10/26","f":"2523387","d":"2026-02-09","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":725.0,"q":1,"pl":null,"y":2026,"mes":2},{"c":"49/25","f":"1303","d":"2026-02-17","p":"DROMEX","m":"AMIODARONE","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":36000.0,"q":1,"pl":120,"y":2026,"mes":2},{"c":"11/26","f":"90756322","d":"2026-02-17","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":925.0,"q":1,"pl":null,"y":2026,"mes":2},{"c":"09/26","f":"LZ434-12/2343","d":"2026-02-23","p":"DR. LAZAR","m":"COMPRIMIDORA","t":"Equipos e insumos","k":"Equipos e insumos","mo":"USD","v":23000.0,"q":2,"pl":60,"y":2026,"mes":2},{"c":"12/26","f":"LZ436-12/2344","d":"2026-02-24","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":10210.24,"q":1,"pl":90,"y":2026,"mes":2},{"c":"12/26","f":"LZ436-12/2345","d":"2026-02-24","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":28240.08,"q":1,"pl":90,"y":2026,"mes":2},{"c":"13/26","f":"LZ438-12/2352","d":"2026-02-27","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":64871.0,"q":1,"pl":90,"y":2026,"mes":2},{"c":"14/26","f":"7283330","d":"2026-03-04","p":"IMCD SWITZERLAND","m":"ERGOTAMINA","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":15700.0,"q":1,"pl":90,"y":2026,"mes":3},{"c":"17/26","f":"1021","d":"2026-03-05","p":"GRUPO SGR","m":"HOMATROPINE","t":"Principio activo","k":"Sistema nervioso","mo":"USD","v":9560.0,"q":1,"pl":90,"y":2026,"mes":3},{"c":"19/26","f":"2532966","d":"2026-03-09","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":285.0,"q":1,"pl":null,"y":2026,"mes":3},{"c":"15/26","f":"LZ432-12/2357","d":"2026-03-14","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":322682.22,"q":2,"pl":120,"y":2026,"mes":3},{"c":"18/26","f":"SI252174","d":"2026-03-20","p":"VARTIA PHARMA","m":"EZETIMIBE","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":12400.0,"q":1,"pl":120,"y":2026,"mes":3},{"c":"21/26","f":"CS-26/02353","d":"2026-03-23","p":"CHEMO","m":"CIPROFIBRATO","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":198750.0,"q":2,"pl":180,"y":2026,"mes":3},{"c":"05/26","f":"CS-26/00078","d":"2026-03-30","p":"CHEMO","m":"HIOSCINA","t":"Principio activo","k":"Digestivo","mo":"USD","v":66000.0,"q":1,"pl":120,"y":2026,"mes":3},{"c":"04/26","f":"CS-26/02446","d":"2026-03-30","p":"CHEMO","m":"FEXOFENADINA","t":"Principio activo","k":"Respiratorio y alergia","mo":"USD","v":12600.0,"q":1,"pl":120,"y":2026,"mes":3},{"c":"20/26","f":"LZ439-12/2365","d":"2026-03-31","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":202853.68,"q":2,"pl":120,"y":2026,"mes":3},{"c":"22/26","f":"LZ433-12/2368","d":"2026-04-17","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":331322.64,"q":2,"pl":120,"y":2026,"mes":4},{"c":"16/26","f":"EXP/3398/25-26","d":"2026-04-21","p":"AARTI DRUGS","m":"METRONIDAZOLE","t":"Principio activo","k":"Digestivo","mo":"USD","v":1750.0,"q":1,"pl":120,"y":2026,"mes":4},{"c":"24/26","f":"E0222","d":"2026-04-30","p":"LAKE CHEMICALS","m":"LORAZEPAM","t":"Principio activo","k":"Sistema nervioso","mo":"USD","v":6000.0,"q":1,"pl":60,"y":2026,"mes":4},{"c":"23/26","f":"LZ437-12/2374","d":"2026-04-30","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":177350.7,"q":2,"pl":120,"y":2026,"mes":4},{"c":"25/26","f":"273909802006","d":"2026-05-03","p":"MEGAFINE PHARMA","m":"ORPHENADRINE","t":"Principio activo","k":"Sistema nervioso","mo":"USD","v":2650.0,"q":1,"pl":90,"y":2026,"mes":5},{"c":"28/26","f":"46639397","d":"2026-05-12","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":3010.0,"q":1,"pl":null,"y":2026,"mes":5},{"c":"27/26","f":"9077334","d":"2026-05-15","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":740.0,"q":1,"pl":null,"y":2026,"mes":5},{"c":"26/26","f":"LZ441-12/2388","d":"2026-05-19","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":30353.6,"q":1,"pl":90,"y":2026,"mes":5},{"c":"29/26","f":"HKSI260503","d":"2026-06-10","p":"BIOBETTA","m":"HIDROSMINA","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":47250.0,"q":1,"pl":120,"y":2026,"mes":6},{"c":"31/26","f":"HKSI260503","d":"2026-06-12","p":"IFFECT CHEMPAR","m":"POLOXAMER","t":"Principio activo","k":"Excipientes","mo":"USD","v":4800.0,"q":1,"pl":90,"y":2026,"mes":6},{"c":"30/26","f":"LZ442-12/2392","d":"2026-06-22","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":54481.8,"q":1,"pl":90,"y":2026,"mes":6},{"c":"07/26","f":"PAI /029","d":"2026-06-24","p":"PIONNER AGRO","m":"METADONA","t":"Principio activo","k":"Analgesia y dolor","mo":"USD","v":6160.0,"q":1,"pl":45,"y":2026,"mes":6},{"c":"32/26","f":"SNC2026AINV4188","d":"2026-06-24","p":"SNC INTERNATIONAL","m":"VALSARTAN","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":11100.0,"q":1,"pl":120,"y":2026,"mes":6},{"c":"38/26","f":"SNC2026AINV4189","d":"2026-07-01","p":"SNC INTERNATIONAL","m":"VALSARTAN","t":"Principio activo","k":"Cardiovascular","mo":"USD","v":20000.0,"q":1,"pl":120,"y":2026,"mes":7},{"c":"33/26","f":"LZ440-12/2397","d":"2026-07-03","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":292837.85,"q":2,"pl":120,"y":2026,"mes":7},{"c":"35/26","f":"LZ443-12/2406","d":"2026-07-30","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":64866.85,"q":1,"pl":90,"y":2026,"mes":7},{"c":"37/26","f":"2559320","d":"2026-07-30","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":2310.0,"q":1,"pl":null,"y":2026,"mes":7},{"c":"36/26","f":"LZ444-12/2408","d":"2026-08-01","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":384777.38,"q":2,"pl":120,"y":2026,"mes":8},{"c":"39/26","f":"90793887","d":"2026-08-25","p":"EDQM","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"EUR","v":1647.5,"q":1,"pl":null,"y":2026,"mes":8},{"c":"40/26","f":"LZ445-12/2421","d":"2026-09-03","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":269100.82,"q":2,"pl":120,"y":2026,"mes":9},{"c":"41/26","f":"LZ446-12/2429","d":"2026-09-10","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":61681.2,"q":1,"pl":90,"y":2026,"mes":9},{"c":"34/26","f":"1324","d":"2026-09-17","p":"DROMEX","m":"DOMPERIDONA","t":"Principio activo","k":"Digestivo","mo":"USD","v":9160.0,"q":1,"pl":120,"y":2026,"mes":9},{"c":"42/26","f":"LZ447-12/2434","d":"2026-09-18","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":70946.02,"q":1,"pl":90,"y":2026,"mes":9},{"c":"37/26","f":"47252680","d":"2026-09-29","p":"USP","m":"ESTANDARES","t":"Estándares de referencia","k":"Estándares de referencia","mo":"USD","v":2980.0,"q":1,"pl":null,"y":2026,"mes":9},{"c":"43/26","f":"LZ450-12/2437","d":"2026-10-01","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":82644.91,"q":1,"pl":90,"y":2026,"mes":10},{"c":"46/26","f":"LZ449-12/2443","d":"2026-10-12","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":2850.0,"q":1,"pl":90,"y":2026,"mes":10},{"c":"45/26","f":"LZ448-12/2441","d":"2026-10-14","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":310753.84,"q":2,"pl":120,"y":2026,"mes":10},{"c":"47/26","f":"LZ452-12/2453","d":"2026-10-26","p":"DR. LAZAR","m":"VARIOS","t":"Varios – Dr. Lazar","k":"Varios – Dr. Lazar","mo":"USD","v":87502.72,"q":1,"pl":90,"y":2026,"mes":10}];
-</script>
-<script>
-/* Funciones de agregación — compartidas con la página y verificables por separado */
-var MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Set','Oct','Nov','Dic'];
-
-function filtrar(data, year) {
-  return year === 'all' ? data.slice() : data.filter(function (r) { return r.y === +year; });
-}
-
-function kpis(data, year) {
-  var f = filtrar(data, year);
-  var usd = f.filter(function (r) { return r.mo === 'USD'; });
-  var eur = f.filter(function (r) { return r.mo === 'EUR'; });
-  var sum = function (a) { return a.reduce(function (s, r) { return s + r.v; }, 0); };
-  var totUsd = sum(usd);
-  var dl = usd.filter(function (r) { return r.p === 'DR. LAZAR'; });
-  return {
-    totUsd: totUsd,
-    totEur: sum(eur),
-    nFact: f.length,
-    nUsd: usd.length,
-    nEur: eur.length,
-    promUsd: usd.length ? totUsd / usd.length : 0,
-    drLazar: sum(dl),
-    drLazarPct: totUsd ? (sum(dl) / totUsd) * 100 : 0,
-    terceros: totUsd - sum(dl),
-    nTerceros: usd.length - dl.length
-  };
-}
-
-/* Serie mensual. year='all' → una línea por año; año concreto → top N proveedores + Otros */
-function evolucion(data, year, topN) {
-  topN = topN || 5;
-  var usd = data.filter(function (r) { return r.mo === 'USD'; });
-  var filas = MESES.map(function (m, i) { return { mes: m, _i: i + 1 }; });
-  var series;
-  if (year === 'all') {
-    series = ['2025', '2026'];
-    usd.forEach(function (r) {
-      var f = filas[r.mes - 1];
-      f[String(r.y)] = (f[String(r.y)] || 0) + r.v;
-    });
-  } else {
-    var año = usd.filter(function (r) { return r.y === +year; });
-    var porProv = {};
-    año.forEach(function (r) { porProv[r.p] = (porProv[r.p] || 0) + r.v; });
-    var orden = Object.keys(porProv).sort(function (a, b) { return porProv[b] - porProv[a]; });
-    var top = orden.slice(0, topN);
-    var hayOtros = orden.length > topN;
-    series = top.concat(hayOtros ? ['Otros'] : []);
-    año.forEach(function (r) {
-      var k = top.indexOf(r.p) >= 0 ? r.p : 'Otros';
-      var f = filas[r.mes - 1];
-      f[k] = (f[k] || 0) + r.v;
-    });
-  }
-  filas.forEach(function (f) {
-    series.forEach(function (s) { if (f[s] === undefined) f[s] = 0; });
-    f.total = series.reduce(function (s, k) { return s + (f[k] || 0); }, 0);
-  });
-  return { filas: filas, series: series };
-}
-
-function porMercaderia(data, year, incluirVarios, limite) {
-  var f = filtrar(data, year).filter(function (r) { return r.mo === 'USD'; });
-  if (!incluirVarios) f = f.filter(function (r) { return r.t !== 'Varios – Dr. Lazar'; });
-  var acc = {};
-  f.forEach(function (r) {
-    if (!acc[r.m]) acc[r.m] = { merc: r.m, valor: 0, n: 0, clase: r.k, tipo: r.t };
-    acc[r.m].valor += r.v; acc[r.m].n += 1;
-  });
-  var arr = Object.keys(acc).map(function (k) { return acc[k]; });
-  arr.sort(function (a, b) { return b.valor - a.valor; });
-  return limite ? arr.slice(0, limite) : arr;
-}
-
-function porTipo(data, year) {
-  var f = filtrar(data, year).filter(function (r) { return r.mo === 'USD'; });
-  var acc = {};
-  f.forEach(function (r) {
-    if (!acc[r.t]) acc[r.t] = { name: r.t, value: 0, n: 0 };
-    acc[r.t].value += r.v; acc[r.t].n += 1;
-  });
-  var total = f.reduce(function (s, r) { return s + r.v; }, 0);
-  var arr = Object.keys(acc).map(function (k) { return acc[k]; });
-  arr.sort(function (a, b) { return b.value - a.value; });
-  arr.forEach(function (d) { d.pct = total ? (d.value / total) * 100 : 0; });
-  return arr;
-}
-
-/* Clases terapéuticas: solo principios activos */
-function porClase(data, year) {
-  var f = filtrar(data, year).filter(function (r) { return r.mo === 'USD' && r.t === 'Principio activo'; });
-  var acc = {};
-  f.forEach(function (r) {
-    if (!acc[r.k]) acc[r.k] = { clase: r.k, valor: 0, n: 0 };
-    acc[r.k].valor += r.v; acc[r.k].n += 1;
-  });
-  var arr = Object.keys(acc).map(function (k) { return acc[k]; });
-  arr.sort(function (a, b) { return b.valor - a.valor; });
-  var total = arr.reduce(function (s, d) { return s + d.valor; }, 0);
-  arr.forEach(function (d) { d.pct = total ? (d.valor / total) * 100 : 0; });
-  return arr;
-}
-
-/* Estacionalidad: matriz año × mes + media mensual entre años con dato */
-function estacionalidad(data) {
-  var usd = data.filter(function (r) { return r.mo === 'USD'; });
-  var años = [2025, 2026];
-  var ultimoMes = {};
-  años.forEach(function (y) {
-    var ms = usd.filter(function (r) { return r.y === y; }).map(function (r) { return r.mes; });
-    ultimoMes[y] = ms.length ? Math.max.apply(null, ms) : 0;
-  });
-  var matriz = años.map(function (y) {
-    var celdas = MESES.map(function (m, i) {
-      var mes = i + 1;
-      var rows = usd.filter(function (r) { return r.y === y && r.mes === mes; });
-      return {
-        anio: y, mes: mes, label: m,
-        valor: rows.reduce(function (s, r) { return s + r.v; }, 0),
-        n: rows.length,
-        futuro: mes > ultimoMes[y]
-      };
-    });
-    return { anio: y, celdas: celdas };
-  });
-  var max = 0;
-  matriz.forEach(function (f) { f.celdas.forEach(function (c) { if (!c.futuro && c.valor > max) max = c.valor; }); });
-  var medias = MESES.map(function (m, i) {
-    var mes = i + 1;
-    var vals = matriz.map(function (f) { return f.celdas[mes - 1]; }).filter(function (c) { return !c.futuro; });
-    var suma = vals.reduce(function (s, c) { return s + c.valor; }, 0);
-    return { mes: m, media: vals.length ? suma / vals.length : 0, años: vals.length };
-  });
-  return { matriz: matriz, medias: medias, max: max, ultimoMes: ultimoMes };
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { MESES: MESES, filtrar: filtrar, kpis: kpis, evolucion: evolucion, porMercaderia: porMercaderia, porTipo: porTipo, porClase: porClase, estacionalidad: estacionalidad };
-}
-</script>
+<script src="agg.js"></script>
+<script>var DATA = []; /* se completa al cargar datos.json vía fetch */</script>
 <script>
 (function () {
   var h = React.createElement;
@@ -642,7 +500,7 @@ if (typeof module !== 'undefined' && module.exports) {
               }))))),
       h('p', { className: 'hint', style: { marginTop: 4 } },
         'Marzo (USD ' + money(est.medias[2].media) + ') y agosto (USD ' + money(est.medias[7].media) +
-        ') son los meses más cargados. Noviembre y diciembre promedian un solo año, porque 2026 llega hasta octubre.'));
+        ') son los meses más cargados. Diciembre todavía promedia un solo año, porque 2026 no llegó a fin de año.'));
   }
 
   /* ---------- App ---------- */
@@ -650,6 +508,23 @@ if (typeof module !== 'undefined' && module.exports) {
     var a = useState('all'), year = a[0], setYear = a[1];
     var b = useState(false), varios = b[0], setVarios = b[1];
     var theme = useTheme();
+    var le = useState('cargando'), estado = le[0], setEstado = le[1];
+    useEffect(function () {
+      var cancelado = false;
+      fetch('datos.json')
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function (json) {
+          if (cancelado) return;
+          DATA = json;
+          setEstado('listo');
+        })
+        .catch(function (e) {
+          if (cancelado) return;
+          console.error('No se pudo cargar datos.json', e);
+          setEstado('error');
+        });
+      return function () { cancelado = true; };
+    }, []);
     var dark = theme === 'dark';
     var pal = dark ? PAL_D : PAL_L;
     var P = {
@@ -662,25 +537,25 @@ if (typeof module !== 'undefined' && module.exports) {
       hover: dark ? 'rgba(91,155,224,.10)' : 'rgba(31,78,140,.06)'
     };
 
-    var k = useMemo(function () { return kpis(DATA, year); }, [year]);
-    var k25 = useMemo(function () { return kpis(DATA, '2025'); }, []);
-    var k26 = useMemo(function () { return kpis(DATA, '2026'); }, []);
+    var k = useMemo(function () { return kpis(DATA, year); }, [year, estado]);
+    var k25 = useMemo(function () { return kpis(DATA, '2025'); }, [estado]);
+    var k26 = useMemo(function () { return kpis(DATA, '2026'); }, [estado]);
     var mayor = useMemo(function () {
       var f = filtrar(DATA, year).filter(function (r) { return r.mo === 'USD'; });
       return f.reduce(function (m, r) { return !m || r.v > m.v ? r : m; }, null);
-    }, [year]);
+    }, [year, estado]);
 
-    var eneOct25 = useMemo(function () {
-      return DATA.filter(function (r) { return r.mo === 'USD' && r.y === 2025 && r.mes <= 10; })
+    var eneNov25 = useMemo(function () {
+      return DATA.filter(function (r) { return r.mo === 'USD' && r.y === 2025 && r.mes <= 11; })
         .reduce(function (s, r) { return s + r.v; }, 0);
-    }, []);
-    var varPct = ((k26.totUsd - eneOct25) / eneOct25) * 100;
+    }, [estado]);
+    var varPct = ((k26.totUsd - eneNov25) / eneNov25) * 100;
 
     var notaUsd;
     if (year === 'all') {
       notaUsd = h('span', null, '2025: ', h('b', null, money(k25.totUsd)), ' · 2026: ', h('b', null, money(k26.totUsd)));
     } else if (year === '2026') {
-      notaUsd = h('span', null, 'Enero-octubre, ', h('span', { className: varPct >= 0 ? 'up' : 'down' }, (varPct >= 0 ? '+' : '') + nf1.format(varPct) + ' %'), ' contra igual período de 2025');
+      notaUsd = h('span', null, 'Enero-noviembre, ', h('span', { className: varPct >= 0 ? 'up' : 'down' }, (varPct >= 0 ? '+' : '') + nf1.format(varPct) + ' %'), ' contra igual período de 2025');
     } else {
       notaUsd = h('span', null, 'Año completo · factura mayor: ', h('b', null, money(mayor ? mayor.v : 0)),
         mayor ? ' (carpeta ' + mayor.c + ')' : '');
@@ -699,7 +574,7 @@ if (typeof module !== 'undefined' && module.exports) {
       }
       var a = calc(2025), b = calc(2026);
       return { a: a, b: b, pct: a ? ((b - a) / a) * 100 : 0 };
-    }, []);
+    }, [estado]);
 
     var notaTerceros;
     if (year === '2026') {
@@ -710,11 +585,18 @@ if (typeof module !== 'undefined' && module.exports) {
         h('b', null, money(k.nTerceros ? k.terceros / k.nTerceros : 0)));
     }
 
+    if (!DATA.length) {
+      return h('div', { className: 'wrap', style: { paddingTop: 90, textAlign: 'center' } },
+        estado === 'error'
+          ? h('p', { className: 'hint' }, 'No se pudieron cargar los datos desde ', h('b', null, 'datos.json'), '. Verificá que el archivo esté publicado junto al tablero.')
+          : h('p', { className: 'hint' }, 'Cargando datos…'));
+    }
+
     return h('div', null,
       h('header', { className: 'head' },
         h('div', { className: 'grow' },
           h('h1', null, 'Importaciones Lazar'),
-          h('p', { className: 'sub' }, '109 facturas · enero 2025 a octubre 2026 · fuente: planilla Vencimientos')),
+          h('p', { className: 'sub' }, '111 facturas · enero 2025 a noviembre 2026 · fuente: planilla Vencimientos')),
         h('div', { className: 'fld' },
           h('span', null, 'Año'),
           h('div', { className: 'seg', role: 'group', 'aria-label': 'Filtrar por año' },
@@ -775,12 +657,11 @@ if (typeof module !== 'undefined' && module.exports) {
           h('h3', null, 'Cómo se armaron estos números'),
           h('ul', null,
             h('li', null, 'Cada factura se cuenta una sola vez: la planilla Vencimientos lista un renglón por cuota, y acá se suman las cuotas de cada factura. El período es la ', h('b', null, 'fecha de la factura'), ', no la del vencimiento.'),
-            h('li', null, 'Datos tomados de la planilla Vencimientos del ', h('b', null, '26/10/2026'), ', ya con el ezetimibe de la carpeta 18/26 corregido a USD 12.400.'),
+            h('li', null, 'Datos tomados de la planilla Vencimientos actualizada al ', h('b', null, '23/11/2026'), '.'),
             h('li', null, 'Dólares y euros van siempre separados, ', h('b', null, 'sin convertir'), '. Los euros son solo estándares EDQM.'),
-            h('li', null, h('b', null, 'Dipirona sódica: '), 'desde 2026 se compra en plaza, así que deja de ser importación. Explica que WELDING no aparezca en 2026 y la caída de las compras a terceros. Descontada la dipirona de 2025, las compras a terceros ', h('b', null, 'suben 8,2 %'), ' (USD 463.224 contra USD 501.248).'),
-            h('li', null, h('span', { className: 'flag' }, 'A corregir: '), 'la fila 94 de la hoja 2025 quedó duplicada con la fila 98 — las dos son la carpeta 30/25, factura 90719426, EUR 326 a 30 días. La 98 es la correcta (proveedor EDQM, 14/08/2025, igual que CAR2025); la 94 conserva el proveedor USP y la fecha 19/08/2025 de la dipirona. Acá queda excluida: conviene borrar ese renglón.'),
+            h('li', null, h('b', null, 'Dipirona sódica: '), 'desde 2026 se compra en plaza, así que deja de ser importación. Explica que WELDING no aparezca en 2026 y la caída de las compras a terceros. Descontada la dipirona de 2025, las compras a terceros ', h('b', null, 'suben 8,4 %'), ' (USD 463.224 contra USD 502.120).'),
             h('li', null, 'Las facturas ', h('b', null, 'SGD'), ' (sin giro de divisas) no están en Vencimientos porque no generan pago, así que quedan fuera de todo el tablero.'),
-            h('li', null, '2026 llega hasta ', h('b', null, 'octubre'), ': cualquier comparación anual se hace contra el mismo tramo de 2025.')))));
+            h('li', null, '2026 llega hasta ', h('b', null, 'noviembre'), ': cualquier comparación anual se hace contra el mismo tramo de 2025.')))));
   }
 
   ReactDOM.createRoot(document.getElementById('root')).render(h(App));
